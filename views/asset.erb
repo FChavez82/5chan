@@ -1,0 +1,22 @@
+<h1><%= @asset.name %></h1>
+<p><%= @asset.description%></p>
+<div id="vcont" style="width:640px; height:480px"></div>
+<script>
+	OO.Player.create('vcont','<%= @asset.embed_code %>');
+</script>
+
+
+<% if current_user %>
+<form action="/assets/<%= @asset.embed_code %>" method='post'>
+	<textarea rows='6' cols='50' name='new_comment'> </textarea>
+	<input type='submit'>
+</form>
+<% else %>
+	<p> Has login mi chavo </p>
+<% end %>
+<% @asset.comments.each do |comment| %>
+	<p><%= comment.user.name %></p>
+	<img src="<%= comment.user.profile_picture_url %>"/>
+	<p><%= comment.created_at.strftime("%A - %d/%b/%y - %H:%M") %> - <%= comment.body %></p>
+<% end %>
+

@@ -1,0 +1,11 @@
+<% @assets.each do |asset|%>
+<% if asset['asset_type'] == 'video'%>
+<div class="asset">
+	<h2><%= asset['name'] %></h2>
+	<img class="pimage" src="<%= asset['preview_image_url']%>" />
+</div>
+<p>
+	<a href="/assets/<%= asset['embed_code'] %>">Ver Video</a>
+</p>
+<% end %>
+<% end %>

@@ -1,0 +1,20 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>5 Chan Test Layout</title>
+		<link href="/css/style.css" type="text/css" rel="stylesheet"/>
+		<script src="http://player.ooyala.com/v3/ad930ccddea4ee78d049f79b053e8e4?platform=html5-fallback"></script>
+	</head>
+	<body>
+		
+		<h1>5 Chan Layout Test !</h1>
+		<% if !current_user %>
+			<a href="/auth/facebook"><img src="http://cdn0.hark.com/assets/facebook-login-button-4d948813e6673d45385041fb27f223a6.png"></a>
+		<% else %>
+			<a href="/logout">Log Out</a>
+		<% end %>
+		<div id='container'>
+			<%= yield %>
+		</div>
+	</body>
+</html>
