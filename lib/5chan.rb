@@ -9,7 +9,10 @@ require './lib/comment'
 require './lib/user'
 require 'yaml'
 
-config = YAML.load(File.read("#{File.dirname __FILE__}/..//config/credentials.yaml"))
+config = {}
+if File.exists? "#{File.dirname __FILE__}/..//config/credentials.yaml"
+  config = YAML.load(File.read("#{File.dirname __FILE__}/..//config/credentials.yaml"))
+end
 
 api_key = ENV['API_KEY'] || config['api_key']
 secret = ENV['SECRET'] || config['secret']
