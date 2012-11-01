@@ -141,6 +141,7 @@ DEPENDENCIES
   datamapper
   dm-core
   dm-migrations
+  dm-postgres-adapter
   dm-sqlite-adapter
   dm-timestamps
   heroku
