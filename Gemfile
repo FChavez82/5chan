@@ -13,12 +13,11 @@ gem 'dm-core'
 gem 'dm-timestamps'
 gem 'omniauth-facebook'
 
+# gem 'dm-sqlite-adapter', :group => :development
+
 #Authentication
 gem 'sinatra_omniauth'
 
-group :development do
-  gem 'dm-sqlite-adapter'
-end
 
 group :production do
   gem 'dm-postgres-adapter'
